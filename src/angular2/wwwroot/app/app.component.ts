@@ -1,7 +1,32 @@
 ﻿import {Component} from 'angular2/core';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from "angular2/router";
+import {BlogListComponent} from "./blogList/blogList.component";
+import {BlogDetailComponent} from "./blogDetail/blogDetail.component";
 
 @Component({
-    selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1>'
+    selector: 'app',
+    templateUrl: 'app/app.component.html',
+    directives: [ROUTER_DIRECTIVES],
+    providers: [ROUTER_PROVIDERS]
 })
-export class AppComponent { }
+
+@RouteConfig(
+        [
+            {
+                path: "/bloglist",
+                name: "BlogList",
+                component: BlogListComponent,
+                useAsDefault: true
+            },
+            {
+                path: "/blogdetail",
+                name: "BlogDetail",
+                component: BlogDetailComponent
+            }
+        ]
+)
+
+export class AppComponent {
+
+
+}
