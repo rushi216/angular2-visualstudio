@@ -1,3 +1,9 @@
 ﻿<div>
-    Blog list
+    <div *ngIf="blogs">
+        <div *ngFor="#blog of blogs">
+            <b>{{blog.Title}}</b>
+            <p>{{blog.Description}}</p>
+        </div>
+    </div>
+    <a [routerLink]="['BlogAdd']">Add New Blog</a>
 </div>

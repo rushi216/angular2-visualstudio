@@ -214,3 +214,5 @@ ModelManifest.xml
 src/angular2/wwwroot/lib
 src/angular2/wwwroot/app/*.js
 src/angular2/wwwroot/app/*.map
+src/angular2/wwwroot/app/**/*.js
+src/angular2/wwwroot/app/**/*.map
