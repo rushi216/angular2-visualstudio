@@ -1,14 +1,15 @@
 ﻿import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from "angular2/router";
+import {HTTP_PROVIDERS} from 'angular2/http';
 import {BlogListComponent} from "./blogList/blogList.component";
 import {BlogAddComponent} from "./blogAdd/blogAdd.component";
 import {BlogService} from "./core/blog.service";
 
 @Component({
     selector: 'app',
-    templateUrl: 'app/app.component.html',
+    templateUrl: 'app/app.html',
     directives: [ROUTER_DIRECTIVES],
-    providers: [ROUTER_PROVIDERS, BlogService]
+    providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS, BlogService]
 })
 
 @RouteConfig(

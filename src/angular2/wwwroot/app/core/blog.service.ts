@@ -1,16 +1,24 @@
 ﻿import {Injectable} from "angular2/core";
+import {Http, Headers, RequestOptions} from "angular2/http";
+
 
 @Injectable()
 
 export class BlogService {
-    public blogs = [{ Id: 1, Title: "a", Description: "b" }];
+
+    private apiUrl = "api/blogs";
+
+    constructor(private http: Http) {
+    }
 
     getBlogs() {
-        return this.blogs;
+        return this.http.get(this.apiUrl).toPromise();
     }
 
     addBlog(blog) {
-        blog.Id = Math.floor(Math.random() * (10000 - 0)) + 0;
-        this.blogs.push(blog);
+        let body = JSON.stringify(blog);
+        let headers = new Headers({ 'Content-Type': 'application/json; charset=utf-8' });
+        let options = new RequestOptions({ headers: headers });
+        return this.http.post(this.apiUrl, body, options).toPromise();
     }
 }

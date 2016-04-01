@@ -15,9 +15,10 @@ export class BlogAddComponent {
     }
 
     addBlog(blog) {
-        this.blogService.addBlog(blog);
-
-        this.router.navigate(["BlogList"]);
+        this.blogService.addBlog(blog).then(() => {
+            this.router.navigate(["BlogList"]);
+        });
+        
     }
 
 }
