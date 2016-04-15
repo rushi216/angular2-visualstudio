@@ -19,4 +19,11 @@ gulp.task('default', function (done) {
       'node_modules/es6-promise/dist/es6-promise.js',
       'node_modules/rxjs/bundles/Rx.js'
     ]).pipe(gulp.dest('./wwwroot/lib/'));
+
+    gulp.src([
+      'node_modules/ng2-select/**/*.ts',
+      '!node_modules/ng2-select/**/*.d.ts',
+      'node_modules/ng2-select/**/*.html',
+      'node_modules/ng2-select/**/*.css'
+    ]).pipe(gulp.dest('./wwwroot/lib/ng2-select'));
 });

@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <base href="/">
-
+    <link href="lib/ng2-select/components/css/ng2-select.css" rel="stylesheet" />
    
 </head>
 
@@ -27,7 +27,14 @@
                 app: {
                     format: 'register',
                     defaultExtension: 'js'
+                },
+                'ng2-select': {
+                    format: 'register',
+                    defaultExtension: 'js'
                 }
+            },
+            map: {
+                'ng2-select':'lib/ng2-select'
             }
         });
         System.import('app/main')
