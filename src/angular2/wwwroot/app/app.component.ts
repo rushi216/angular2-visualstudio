@@ -1,5 +1,5 @@
 ﻿import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from "angular2/router";
+import {RouteConfig, ROUTER_DIRECTIVES} from "angular2/router";
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {BlogListComponent} from "./blogList/blogList.component";
 import {BlogAddComponent} from "./blogAdd/blogAdd.component";
@@ -9,7 +9,7 @@ import {BlogService} from "./core/blog.service";
     selector: 'app',
     templateUrl: 'app/app.html',
     directives: [ROUTER_DIRECTIVES],
-    providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS, BlogService]
+    providers: [HTTP_PROVIDERS, BlogService]
 })
 
 @RouteConfig(

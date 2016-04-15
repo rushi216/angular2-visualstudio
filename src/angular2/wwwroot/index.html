@@ -5,6 +5,12 @@
     
     <base href="/">
 
+   
+</head>
+
+<!-- 3. Display the application -->
+<body>
+    <app>Loading...</app>
     <!-- 1. Load libraries -->
     <script src="lib/es6-shim.js"></script>
     <script src="lib/angular2-polyfills.js"></script>
@@ -16,21 +22,16 @@
 
     <!-- 2. Configure SystemJS -->
     <script>
-      System.config({
-        packages: {
-          app: {
-            format: 'register',
-            defaultExtension: 'js'
-          }
-        }
-      });
-      System.import('app/main')
-            .then(null, console.error.bind(console));
+        System.config({
+            packages: {
+                app: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                }
+            }
+        });
+        System.import('app/main')
+              .then(null, console.error.bind(console));
     </script>
-</head>
-
-<!-- 3. Display the application -->
-<body>
-    <app>Loading...</app>
 </body>
 </html>
